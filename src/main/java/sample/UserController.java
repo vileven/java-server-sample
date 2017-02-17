@@ -1,10 +1,7 @@
 package sample;
 
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
@@ -30,8 +27,8 @@ public class UserController {
 
     private String name = null;
 
-    @RequestMapping(path = "/api/hi/{UserName}", method = RequestMethod.POST, produces = "application/json")
-    public String regUser(@PathVariable(name = "UserName") String userName) {
+    @RequestMapping(path = "/api/hi", method = RequestMethod.GET, produces = "application/json")
+    public String regUser(@RequestParam(value = "name", required = false) String userName) {
         this.name = userName;
         return "{\"name\":" + userName + "}";
     }
