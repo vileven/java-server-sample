@@ -28,7 +28,9 @@ public class UserController {
     public UserController() {
     }
 
-
+    /**
+     * Массив имен пользователей
+     */
     private ArrayList<String> userNames = new ArrayList<>();
 
     @RequestMapping(path = "/api/hi", method = RequestMethod.GET, produces = "application/json")
